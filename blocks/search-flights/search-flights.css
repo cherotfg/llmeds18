@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .search-flights {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  max-width: 780px;
+}
+
+main .search-flights .search-flights-wrapper {
+  position: relative;
+}
+
+main .search-flights .search-flights-track {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+main .search-flights .search-flights-track::-webkit-scrollbar {
+  display: none;
+}
+
+main .search-flights .search-flights-card {
+  flex: 0 0 220px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+main .search-flights .search-flights-image {
+  flex: 6;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+main .search-flights .search-flights-info {
+  flex: 4;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+main .search-flights .search-flights-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .search-flights .search-flights-desc {
+  margin: 3px 0 0;
+  font-size: 11px;
+  line-height: 1.35;
+  opacity: 0.78;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .search-flights .search-flights-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+main .search-flights .search-flights-price {
+  font-weight: 700;
+}
+
+main .search-flights .search-flights-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #00266b;
+  color: #fff;
+  white-space: nowrap;
+}
+
+main .search-flights .search-flights-cta {
+  margin-top: auto;
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 0;
+  margin-bottom: 0;
+  background: #00266b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+main .search-flights .search-flights-cta:hover {
+  opacity: 0.88;
+}
+
+main .search-flights .search-flights-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  display: none;
+}
+
+main .search-flights .search-flights-arrow-left {
+  left: 6px;
+}
+
+main .search-flights .search-flights-arrow-right {
+  right: 6px;
+}
+
+main .search-flights .search-flights-arrow:focus-visible {
+  outline: 2px solid #2275d3;
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  main .search-flights { background: #111; }
+}
+body.dark main .search-flights { background: #111; }
